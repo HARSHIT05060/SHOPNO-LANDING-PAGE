@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,5 +101,360 @@
 .sticky-scroll-card.revealed {
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out !important;
 }
+
+/* Wavy "How It Works" Section Styles (Aligning exactly with screenshot) */
+.hiw-section-wrapper {
+  position: relative;
+  text-align: center;
+  padding: 80px 0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --white: #ffffff;
+  --brand-pink: #ffc400; 
+  --brand-pink-light: rgba(255, 196, 0, 0.1);
+  --text-body: #a1a1a6;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hiw-step-row-container {
+  position: relative;
+  margin-top: 60px;
+  min-height: 380px;
+}
+
+.hiw-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .hiw-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.hiw-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* to support absolute arrows */
+  transition: var(--transition-smooth);
+}
+
+/* Wavy vertical displacement positions */
+@media (min-width: 993px) {
+  .hiw-step-item:nth-child(1) { transform: translateY(35px); }
+  .hiw-step-item:nth-child(2) { transform: translateY(-5px); }
+  .hiw-step-item:nth-child(3) { transform: translateY(25px); }
+  .hiw-step-item:nth-child(4) { transform: translateY(-5px); }
+  .hiw-step-item:nth-child(5) { transform: translateY(35px); }
+}
+
+.hiw-icon-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-pink);
+  margin-bottom: 24px;
+  z-index: 3;
+  transition: var(--transition-fast);
+}
+
+.hiw-step-item:hover .hiw-icon-container {
+  background: var(--brand-pink-light);
+  transform: scale(1.1);
+}
+
+/* Original Dashed Curvy Arrow Images connecting steps */
+.hiw-card-line-arrow {
+  position: absolute;
+  top: 25px; /* Alignment with center of icon bubble */
+  left: 60%; /* Center-right of icon */
+  width: 95%; /* Stretch across the gap */
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+@media (max-width: 992px) {
+  .hiw-card-line-arrow {
+    display: none; /* Hide decorative connectors on mobile */
+  }
+}
+
+/* Original Ticketbud Step Ticket Image wrapper */
+.hiw-ticket-img-box {
+  width: 100%;
+  max-width: 200px;
+  height: 105px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-ticket-img-box:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.hiw-ticket-original-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hiw-step-description {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  max-width: 180px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Powerful Features Dark Section */
+.features-dark-bg {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+.header-scribble-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header-scribble-svg {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  pointer-events: none;
+}
+
+.handwritten-font {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 2.2rem;
+  color: #ffc400; /* Gold/Yellow matching the Shopno brand */
+  line-height: 1;
+}
+
+.included-badge-container {
+  position: absolute;
+  top: -55px;
+  left: 10px;
+  transform: rotate(-8deg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .included-badge-container {
+    display: none; /* Hide on mobile to prevent overlapping */
+  }
+}
+
+/* 4-Column Wavy Steps Grid Configuration */
+.hiw-columns-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .hiw-columns-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Wavy vertical displacement positions for 4 columns */
+@media (min-width: 993px) {
+  .hiw-columns-grid-4 .hiw-step-item:nth-child(1) { transform: translateY(35px); }
+  .hiw-columns-grid-4 .hiw-step-item:nth-child(2) { transform: translateY(-5px); }
+  .hiw-columns-grid-4 .hiw-step-item:nth-child(3) { transform: translateY(25px); }
+  .hiw-columns-grid-4 .hiw-step-item:nth-child(4) { transform: translateY(-5px); }
+}
+
+/* 3D Card Flip Animation */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  max-width: 250px;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.flip-card-front {
+  background: #1c1d1f;
+  border: 1px solid rgba(255, 196, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Custom CSS-Engineered Shopno Ticket Stubs (Back Face) */
+.shopno-ticket-stub {
+  background: #1c1d1f;
+  border: 1px solid rgba(255, 196, 0, 0.25);
+  border-radius: 16px;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 24px 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card:hover .shopno-ticket-stub {
+  border-color: #ffc400;
+  box-shadow: 0 15px 35px rgba(255, 196, 0, 0.15);
+}
+
+/* Pseudo cutout circles on left/right edges */
+.shopno-ticket-stub::before,
+.shopno-ticket-stub::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #141414; /* Matches outer section background */
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: border-color 0.4s ease;
+}
+
+.shopno-ticket-stub::before {
+  left: -9px;
+  border-right: 1.5px solid rgba(255, 196, 0, 0.25);
+}
+
+.shopno-ticket-stub::after {
+  right: -9px;
+  border-left: 1.5px solid rgba(255, 196, 0, 0.25);
+}
+
+.flip-card:hover .shopno-ticket-stub::before {
+  border-right-color: #ffc400;
+}
+
+.flip-card:hover .shopno-ticket-stub::after {
+  border-left-color: #ffc400;
+}
+
+/* Dashed ticket separator inside stub */
+.ticket-dashed-divider {
+  border-top: 1.5px dashed rgba(255, 196, 0, 0.2);
+  width: 100%;
+  margin: 14px 0;
+}
+
+/* Animated Connecting Arrows (Connected across sections) */
+.arrow-connector-animated {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.85;
+  
+  /* Filter to convert PNG to Shopno Yellow (#ffc400) */
+  filter: brightness(0) saturate(100%) invert(82%) sepia(87%) saturate(541%) hue-rotate(346deg) brightness(101%) contrast(102%);
+  
+  /* Mask animation to simulate moving current */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,1) 50%,
+    rgba(255,255,255,0.3) 100%
+  );
+  -webkit-mask-size: 200% 100%;
+  mask-image: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,1) 50%,
+    rgba(255,255,255,0.3) 100%
+  );
+  mask-size: 200% 100%;
+  animation: flow-dashes 3.5s linear infinite;
+}
+
+@keyframes flow-dashes {
+  0% {
+    -webkit-mask-position: 200% 0;
+    mask-position: 200% 0;
+  }
+  100% {
+    -webkit-mask-position: -100% 0;
+    mask-position: -100% 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .arrow-connector-animated {
+    display: none; /* Hide decorative connectors on mobile for cleaner stack */
+  }
+}
+
+.gold-filter {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(87%) saturate(541%) hue-rotate(346deg) brightness(101%) contrast(102%);
+}
+
 
 

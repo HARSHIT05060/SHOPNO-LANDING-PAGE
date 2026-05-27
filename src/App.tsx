@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
-import { ArrowRight, X, Check, ChevronLeft, ChevronRight, Plus, Minus, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, X, Check, ChevronLeft, ChevronRight, Plus, Minus, Phone, MapPin, Globe, Megaphone, Sparkles, BarChart3 } from 'lucide-react';
 
 // 3D Carousel Steps config
 const zoomSteps = [
@@ -386,10 +386,10 @@ function App() {
       )}
 
       {/* ── SECTION 1: HERO (Full viewport height) ── */}
-      <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-[#141414] border-b border-white/10">
+      <section className="relative z-50 w-full min-h-screen flex flex-col justify-between bg-[#141414] border-b border-white/10">
         
         {/* WebGL Animated Shader Background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full">
+        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full overflow-hidden">
           <Shader className="w-full h-full">
             <Swirl colorA="#141414" colorB="#1c1d1f" detail={1.7} />
             <ChromaFlow 
@@ -481,10 +481,17 @@ function App() {
             </div>
           </div>
         </div>
+        {/* Transition arrow from Hero to Solutions */}
+        <img 
+          src="/images/ticketbud/line-arrow-3.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-45px', right: '15%', width: '180px' }} 
+          alt="Hero to Solutions connector" 
+        />
       </section>
 
       {/* ── SECTION 2: SOLUTIONS (Dark Cement Background) ── */}
-      <section id="solutions" className="bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10">
+      <section id="solutions" className="relative z-40 bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Solutions Banner Image */}
@@ -528,10 +535,17 @@ function App() {
             </ul>
           </div>
         </div>
+        {/* Transition arrow from Solutions to Benefit Intro */}
+        <img 
+          src="/images/ticketbud/line-arrow-8.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-55px', left: '12%', width: '160px', transform: 'scaleX(-1)' }} 
+          alt="Solutions to Benefit Intro connector" 
+        />
       </section>
 
       {/* ── SECTION 3: BENEFIT INTRO GRID ── */}
-      <section id="intro" className="bg-[#141414] py-20 w-full border-b border-white/10 text-white">
+      <section id="intro" className="relative z-30 bg-[#141414] py-20 w-full border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <div className="scroll-reveal">
             <h2 className="text-white font-semibold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-[900px] mx-auto mb-4 font-heading">
@@ -563,10 +577,17 @@ function App() {
             ))}
           </div>
         </div>
+        {/* Transition arrow from Benefit Intro to Sticky Scale */}
+        <img 
+          src="/images/ticketbud/line-arrow-9.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-55px', right: '12%', width: '160px' }} 
+          alt="Benefit Intro to Sticky Scale connector" 
+        />
       </section>
 
       {/* ── SECTION 4: STICKY SCALE SECTION ── */}
-      <section id="sticky-scale" className="bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10 text-white">
+      <section id="sticky-scale" className="relative z-20 bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Left Sticky Sidebar Column */}
@@ -632,7 +653,7 @@ function App() {
       </section>
 
       {/* ── SECTION 5: BRAND LOGOS MARQUEE ── */}
-      <section className="w-full overflow-hidden bg-[#141414] py-16 border-b border-white/10 text-white">
+      <section className="relative z-15 w-full overflow-hidden bg-[#141414] py-16 border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto text-center mb-8 scroll-reveal">
           <h4 className="text-[12px] sm:text-[13px] uppercase tracking-[0.15em] text-gray-400 font-bold px-4">
             Trusted by Growing D2C Brands Across India
@@ -661,7 +682,7 @@ function App() {
       </section>
 
       {/* ── SECTION 6: 3D MOBILE APP CAROUSEL ── */}
-      <section id="screens" className="bg-[#1c1d1f] py-20 sm:py-24 overflow-hidden relative border-b border-white/10 text-white">
+      <section id="screens" className="relative z-10 bg-[#1c1d1f] py-20 sm:py-24 border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 text-center mb-10 scroll-reveal">
           <div className="bg-[#ffc400]/10 border border-[#ffc400]/30 text-[#ffc400] rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4 w-fit mx-auto font-heading">
             Shopify Mobile Interface
@@ -749,10 +770,17 @@ function App() {
         </div>
 
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-12" />
+        {/* Transition arrow from Carousel to Growth Services */}
+        <img 
+          src="/images/ticketbud/line-arrow-15.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-35px', left: '15%', width: '150px' }} 
+          alt="Carousel to Growth Services connector" 
+        />
       </section>
 
       {/* ── SECTION 7: SHOPIFY GROWTH SERVICES GRID ── */}
-      <section id="features" className="bg-[#141414] py-20 sm:py-28 w-full border-b border-white/10 text-white">
+      <section id="features" className="relative z-9 bg-[#141414] py-20 sm:py-28 w-full border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 text-center mb-16 scroll-reveal">
           <h2 className="text-white font-semibold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight mb-4 font-heading">
             One Agency. All the Shopify Growth Services You Need.
@@ -822,12 +850,100 @@ function App() {
               <img src="https://m.media-amazon.com/images/G/31/smartcommerce/v2/integrated-section-4.png" alt="Inventory Management" className="max-h-[160px] sm:max-h-[200px] object-contain" />
             </div>
           </div>
-
         </div>
+        {/* Transition arrow from Growth Services to Powerful Features */}
+        <img 
+          src="/images/ticketbud/line-arrow-9.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-40px', right: '20%', width: '160px', transform: 'rotate(45deg)' }} 
+          alt="Growth Services to Powerful Features connector" 
+        />
+      </section>
+
+      {/* ── SECTION 7.5: POWERFUL FEATURES (Dark Theme / Gold Accents) ── */}
+      <section className="relative z-8 features-dark-bg py-20 w-full border-t border-b border-white/5">
+        <div className="max-w-[1240px] mx-auto px-5 sm:px-8 relative">
+          
+          <div className="relative bg-[#1c1d1f]/60 backdrop-blur-md border border-[#ffc400]/25 shadow-2xl rounded-[24px] p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Top-Left Dotted Arrow and Included label */}
+            <div className="included-badge-container">
+              <span className="handwritten-font block text-[#ffc400]">Included</span>
+              <img 
+                src="/images/ticketbud/line-arrow-3.png" 
+                className="w-16 h-auto opacity-95 -mt-2 ml-4 transform rotate-[10deg] gold-filter" 
+                alt="Included arrow" 
+              />
+            </div>
+
+            {/* Left side text */}
+            <div className="lg:col-span-5 flex flex-col items-start text-left">
+              <h2 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight mb-6">
+                Powerful{' '}
+                <span className="header-scribble-container text-[#ffc400]">
+                  Features
+                  <svg className="header-scribble-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0,8 Q50,2 100,8" stroke="#ffc400" strokeWidth="2.5" fill="none" />
+                  </svg>
+                </span>
+              </h2>
+              
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 font-sans">
+                Shopno eCommerce offers an extensive list of custom-designed tools to make your Shopify store launch easier and your marketing campaigns successful.
+              </p>
+              
+              <p className="text-gray-400 text-sm leading-relaxed mb-8 font-sans">
+                All our premium features, theme upgrades, checkout loops, and marketing automations are included in our campaign plans for everyone to use.
+              </p>
+
+              <button 
+                onClick={() => setShowModal(true)}
+                className="group inline-flex items-center gap-2 font-heading font-extrabold text-[#ffc400] hover:text-[#e0ad00] transition-colors text-base"
+              >
+                More Features <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </button>
+            </div>
+
+            {/* Right side 2x3 grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: "Custom Store Page Builder", desc: "Build tailored landing pages and marketing funnels in minutes." },
+                { title: "Custom Registration Forms & Checkout", desc: "Collect customer data, customized checkout parameters, and order notes." },
+                { title: "Promotional Discount & Access Codes", desc: "Deploy high-conversion discount triggers, referral codes, and VIP tier passes." },
+                { title: "Timed Entry & Booking Calendars", desc: "Set up timed reservation loops, service booking pages, and availability grids." },
+                { title: "Send Invites & WhatsApp Loops", desc: "Re-engage abandoned checkouts and coordinate automated post-purchase updates." },
+                { title: "Add-on Products & Upsell Offers", desc: "Maximize purchase value with dynamic cross-sell bundles at checkout." }
+              ].map((feature, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-[#141414]/80 border border-white/5 rounded-[16px] p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-[#ffc400]/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#ffc400] flex items-center justify-center text-gray-950 mb-4 group-hover:scale-110 transition-transform">
+                    <Check size={18} strokeWidth={3} />
+                  </div>
+                  <h4 className="text-white font-extrabold text-sm sm:text-base mb-2 font-heading">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-400 text-xs sm:text-sm font-sans leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+        {/* Transition arrow from Powerful Features to Testimonials */}
+        <img 
+          src="/images/ticketbud/line-arrow-8.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-55px', left: '20%', width: '160px' }} 
+          alt="Powerful Features to Testimonials connector" 
+        />
       </section>
 
       {/* ── SECTION 8: TESTIMONIALS (Truke & Stratum Masonry) ── */}
-      <section className="bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10 text-white">
+      <section id="testimonials" className="relative z-7 bg-[#1c1d1f] py-20 sm:py-28 w-full border-b border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-16 scroll-reveal">
             <div className="bg-[#ffc400]/10 border border-[#ffc400]/30 text-[#ffc400] rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4 w-fit mx-auto font-heading">
@@ -894,111 +1010,198 @@ function App() {
 
           </div>
         </div>
+        {/* Transition arrow from Testimonials to Campaign Journey */}
+        <img 
+          src="/images/ticketbud/line-arrow-3.png" 
+          className="arrow-connector-animated"
+          style={{ bottom: '-45px', left: '15%', width: '180px', transform: 'scaleX(-1)' }} 
+          alt="Testimonials to Campaign Journey connector" 
+        />
       </section>
 
-      {/* ── SECTION 9: FOLLOW OUR JOURNEY (Sync Steps with Overlays) ── */}
-      <section id="journey" className="bg-[#141414] py-20 sm:py-28 w-full border-b border-white/10 text-white">
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-16 scroll-reveal">
-            <div className="bg-[#ffc400]/10 border border-[#ffc400]/30 text-[#ffc400] rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4 w-fit mx-auto font-heading">
-              Social Updates
-            </div>
-            <h2 className="text-white font-semibold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight mb-4 font-heading">
-              Follow Our Journey
-            </h2>
-            <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-[700px] mx-auto font-body">
-              Stay connected with Shopno eCommerce. We share Shopify engineering insights, checkout optimizations, and campaign growth stories daily.
-            </p>
-          </div>
+      {/* ── SECTION 9: HOW IT WORKS (3D Flipping Cards with Connected Arrows) ── */}
+      <section id="journey" className="relative z-6 page-section hiw-section-wrapper bg-[#141414] border-b border-white/10 text-white">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <span className="section-badge text-[#ffc400]">Our Process</span>
+          
+          <h2 className="section-title text-white" style={{ marginBottom: '16px' }}>
+            <span className="header-scribble-container text-white">
+              How It Works
+              <svg className="header-scribble-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0,8 Q50,2 100,8" stroke="#ffc400" strokeWidth="2.5" fill="none" />
+              </svg>
+            </span>
+          </h2>
+          
+          <p className="section-subtitle text-gray-400" style={{ maxWidth: '640px', margin: '0 auto 12px auto' }}>
+            From plan selection to campaign scaling, here is how we work with you to build and grow your D2C brand.
+          </p>
+          <p className="text-gray-300 font-semibold mb-8">
+            Your journey to Shopify scale, step-by-step:
+          </p>
 
-          {/* Steps Grid with Hover Overlay */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {[
-              {
-                phase: "Phase 01",
-                title: "Audit & Wireframing",
-                img: "/images/journey_audit_strategy.png",
-                desc: "Comprehensive analysis of storefront performance, design blueprints, and catalog layouts.",
-                bullets: ["UX/UI Layout Blueprints", "Store Speed Diagnostics", "Catalog Architecture Plan"]
-              },
-              {
-                phase: "Phase 02",
-                title: "Theme Engineering",
-                img: "/images/journey_theme_engineering.png",
-                desc: "Development of high-performance, responsive Shopify Liquid code and CRO setups.",
-                bullets: ["Custom Liquid Themes", "Accelerated Checkout Flow", "95+ Speed Optimizations"]
-              },
-              {
-                phase: "Phase 03",
-                title: "Marketing Syncs",
-                img: "/images/journey_marketing_syncs.png",
-                desc: "Syncing logistics partners, local payment gateways, and custom pixel analytics tracking.",
-                bullets: ["UPI & Local Gateways", "Delhivery & Shiprocket", "Meta & Google Pixel Audits"]
-              },
-              {
-                phase: "Phase 04",
-                title: "Launch & Scale",
-                img: "/images/journey_launch_scale.png",
-                desc: "Setting your Shopify campaign live and optimizing conversions through high-ROI ad loops.",
-                bullets: ["Live Store Go-live Checks", "Post-Purchase SMS Loops", "ROAS & Conversion Scaling"]
-              }
-            ].map((step, i) => (
-              <div 
-                key={i} 
-                className={`relative rounded-2xl overflow-hidden border border-white/10 bg-[#1c1d1f] flex flex-col justify-end aspect-[4/3] group shadow-2xl transition-all duration-300 cursor-pointer scroll-reveal ${
-                  i === 1 ? 'reveal-delay-1' : i === 2 ? 'reveal-delay-2' : i === 3 ? 'reveal-delay-3' : ''
-                }`}
-              >
-                {/* Step Background Image */}
-                <img 
-                  src={step.img} 
-                  alt={step.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
-                />
-
-                {/* Default Visible Card Header */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 z-10 transition-opacity duration-300 group-hover:opacity-0 flex flex-col items-start">
-                  <span className="text-[#ffc400] uppercase tracking-wider text-xs font-bold mb-1">
-                    {step.phase}
-                  </span>
-                  <h4 className="text-white text-lg font-semibold leading-tight font-heading">
-                    {step.title}
-                  </h4>
+          <div className="hiw-step-row-container">
+            <div className="hiw-columns-grid-4">
+              {/* Step 1 */}
+              <div className="hiw-step-item">
+                <div className="hiw-icon-container">
+                  <Globe size={20} />
                 </div>
-
-                {/* Hover Glassmorphic Overlay */}
-                <div className="absolute inset-0 bg-[#141517]/95 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 flex flex-col justify-center p-6 text-white text-left">
-                  <span className="text-[#ffc400] uppercase tracking-wider text-xs font-extrabold mb-1 font-heading">
-                    {step.phase}
-                  </span>
-                  <h4 className="text-white text-xl font-bold mb-3 font-heading">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4 font-body">
-                    {step.desc}
-                  </p>
-                  
-                  <div className="h-px bg-white/10 w-full mb-3" />
-                  <div className="text-[10px] uppercase tracking-widest text-[#ffc400] font-extrabold mb-2 font-heading">
-                    Key Deliverables
+                {/* Dotted Arrow 8 leading to Step 2 */}
+                <img src="/images/ticketbud/line-arrow-8.png" className="arrow-connector-animated" style={{ top: '-20px', left: '60%', width: '85%', zIndex: 1 , rotate: '-10deg' }} alt="" />
+                
+                {/* 3D Flip Card */}
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    {/* Front Face: Image */}
+                    <div className="flip-card-front relative select-none">
+                      <img src="/images/journey_audit_strategy.png" alt="Plan & Audit" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10" />
+                      <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                        <span className="text-[#ffc400] text-[10px] font-extrabold tracking-wider uppercase">PHASE 01</span>
+                        <h4 className="text-white font-bold text-sm sm:text-base font-heading">Plan & Audit</h4>
+                      </div>
+                    </div>
+                    {/* Back Face: Ticket Stub Content */}
+                    <div className="flip-card-back">
+                      <div className="shopno-ticket-stub">
+                        <span className="text-[#ffc400] text-xs font-extrabold font-heading mb-1 tracking-wider">PHASE 01</span>
+                        <h4 className="text-white font-extrabold text-sm sm:text-base text-center font-heading">
+                          Plan & Audit
+                        </h4>
+                        <div className="ticket-dashed-divider"></div>
+                        <ul className="text-[11px] text-gray-400 space-y-1.5 text-left list-disc list-inside font-sans w-full">
+                          <li>Select Growth Plan</li>
+                          <li>In-Depth Store Audit</li>
+                          <li>Wireframe Blueprints</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="space-y-1.5 text-xs text-gray-300 font-body">
-                    {step.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc400]" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
-            ))}
+
+              {/* Step 2 */}
+              <div className="hiw-step-item">
+                <div className="hiw-icon-container">
+                  <Sparkles size={20} />
+                </div>
+                {/* Dotted Arrow 9 leading to Step 3 */}
+                <img src="/images/ticketbud/line-arrow-9.png" className="arrow-connector-animated" style={{ top: '35px', left: '60%', width: '85%', zIndex: 1 , rotate: '5deg' }} alt="" />
+                
+                {/* 3D Flip Card */}
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    {/* Front Face: Image */}
+                    <div className="flip-card-front relative select-none">
+                      <img src="/images/journey_theme_engineering.png" alt="Custom Theme Design" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10" />
+                      <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                        <span className="text-[#ffc400] text-[10px] font-extrabold tracking-wider uppercase">PHASE 02</span>
+                        <h4 className="text-white font-bold text-sm sm:text-base font-heading">Theme Design</h4>
+                      </div>
+                    </div>
+                    {/* Back Face: Ticket Stub Content */}
+                    <div className="flip-card-back">
+                      <div className="shopno-ticket-stub">
+                        <span className="text-[#ffc400] text-xs font-extrabold font-heading mb-1 tracking-wider">PHASE 02</span>
+                        <h4 className="text-white font-extrabold text-sm sm:text-base text-center font-heading">
+                          Theme Design
+                        </h4>
+                        <div className="ticket-dashed-divider"></div>
+                        <ul className="text-[11px] text-gray-400 space-y-1.5 text-left list-disc list-inside font-sans w-full">
+                          <li>Custom Liquid Styles</li>
+                          <li>Speed Engineering (95+)</li>
+                          <li>Mobile Checkout Overrides</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="hiw-step-item">
+                <div className="hiw-icon-container">
+                  <Megaphone size={20} />
+                </div>
+                {/* Dotted Arrow 8 leading to Step 4 */}
+                <img src="/images/ticketbud/line-arrow-8.png" className="arrow-connector-animated" style={{ top: '10px', left: '62%', width: '85%', zIndex: 1 , rotate: '180deg' }} alt="" />
+                
+                {/* 3D Flip Card */}
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    {/* Front Face: Image */}
+                    <div className="flip-card-front relative select-none">
+                      <img src="/images/journey_marketing_syncs.png" alt="Marketing Sync" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10" />
+                      <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                        <span className="text-[#ffc400] text-[10px] font-extrabold tracking-wider uppercase">PHASE 03</span>
+                        <h4 className="text-white font-bold text-sm sm:text-base font-heading">Marketing Sync</h4>
+                      </div>
+                    </div>
+                    {/* Back Face: Ticket Stub Content */}
+                    <div className="flip-card-back">
+                      <div className="shopno-ticket-stub">
+                        <span className="text-[#ffc400] text-xs font-extrabold font-heading mb-1 tracking-wider">PHASE 03</span>
+                        <h4 className="text-white font-extrabold text-sm sm:text-base text-center font-heading">
+                          Marketing Sync
+                        </h4>
+                        <div className="ticket-dashed-divider"></div>
+                        <ul className="text-[11px] text-gray-400 space-y-1.5 text-left list-disc list-inside font-sans w-full">
+                          <li>Gateway & Logistics Integration</li>
+                          <li>Pixel & Analytics Syncs</li>
+                          <li>Abandoned Cart Flows</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="hiw-step-item">
+                <div className="hiw-icon-container">
+                  <BarChart3 size={20} />
+                </div>
+                
+                {/* 3D Flip Card */}
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    {/* Front Face: Image */}
+                    <div className="flip-card-front relative select-none">
+                      <img src="/images/journey_launch_scale.png" alt="Launch & Grow" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10" />
+                      <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                        <span className="text-[#ffc400] text-[10px] font-extrabold tracking-wider uppercase">PHASE 04</span>
+                        <h4 className="text-white font-bold text-sm sm:text-base font-heading">Launch & Grow</h4>
+                      </div>
+                    </div>
+                    {/* Back Face: Ticket Stub Content */}
+                    <div className="flip-card-back">
+                      <div className="shopno-ticket-stub">
+                        <span className="text-[#ffc400] text-xs font-extrabold font-heading mb-1 tracking-wider">PHASE 04</span>
+                        <h4 className="text-white font-extrabold text-sm sm:text-base text-center font-heading">
+                          Launch & Grow
+                        </h4>
+                        <div className="ticket-dashed-divider"></div>
+                        <ul className="text-[11px] text-gray-400 space-y-1.5 text-left list-disc list-inside font-sans w-full">
+                          <li>Live Store Go-Live Check</li>
+                          <li>Scale Traffic & Ad Loops</li>
+                          <li>ROAS Optimization</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── SECTION 10: SAAS FOOTER (Light Grey Footer Style) ── */}
-      <footer className="bg-[#141414] pt-20 pb-8 w-full border-t border-white/10 text-white">
+      <footer className="relative z-5 bg-[#141414] pt-20 pb-8 w-full border-t border-white/10 text-white">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
